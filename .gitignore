@@ -4,3 +4,5 @@ src/fireLib_wrap.c
 src/firelib.py
 __pycache__
 dist
+build
+pyfirelib.egg-info/

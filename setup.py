@@ -1,5 +1,12 @@
-from distutils.core import setup, Extension
-from setuptools import find_packages
+from setuptools import Extension, find_packages, setup
+from setuptools.command.build_py import build_py
+
+
+class BuildPy(build_py):
+    def run(self):
+        self.run_command("build_ext")
+        super(build_py, self).run()
+
 
 setup(
     name="pyfirelib",
@@ -10,15 +17,24 @@ setup(
     long_description="",
     long_description_content_type="text/markdown",
     url="https://github.com/helge.krueger/firelib",
+    cmdclass={
+        "build_py": BuildPy,
+    },
+    packages=find_packages("src"),
+    package_dir={"": "src"},
+    package_data={"": ["*.pyd"]},
     ext_modules=[
         Extension(
-            "firelib",
+            "_firelib",
             ["src/fireLib.i", "src/fireLib.c"],
             include_dirs=["src"],
-            swig_opts=["-modern", "-I../include"],
+            swig_opts=["-I src"],
+        ),
+        Extension(
+            name="firelib",
+            sources=["src/fireLib.i", "src/fireLib.c"],
         ),
     ],
-    packages=find_packages('src'),
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
