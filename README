@@ -1,0 +1,13 @@
+Firelib from http://www.fire.org/downloads/fireLib/1.0.4/
+
+Installation
+```
+pip install git+https://github.com/HelgeKrueger/py-firelib.git#egg=pyfirelib
+
+```
+
+Usage
+```
+import _firelib
+```
+
