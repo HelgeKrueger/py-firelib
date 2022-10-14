@@ -1,0 +1,4 @@
+*.so
+*.o
+src/fireLib_wrap.c
+__pycache__
