@@ -11,5 +11,5 @@ ${SRC}/fireLib.o : ${SRC}/fireLib.c
 ${SRC}/fireLib_wrap.o : ${SRC}/fireLib_wrap.c
 	gcc -c -fPIC -I/usr/include/python3.10 ${SRC}/fireLib_wrap.c -o ${SRC}/fireLib_wrap.o
 
-${SRC}/fireLib_wrap.c: ${SRC}/fireLib.i ${SRC}/fireLib.h
+${SRC}/fireLib_wrap.c ${SRC}/firelib.py: ${SRC}/fireLib.i ${SRC}/fireLib.h
 	swig -python ${SRC}/fireLib.i

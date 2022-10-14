@@ -1,0 +1,14 @@
+[build-system]
+requires = [
+  "setuptools >= 40.9.0",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyfirelib"
+version = "0.0.1"
+description = "python package based on firelib"
+authors = [
+  { name = "Helge Krueger", email = "helge.krueger@gmail.com" },
+  ]
+classifiers = ['Programming Language :: Python :: 3', 'License :: OSI Approved :: MIT License', 'Operating System :: OS Independent']
