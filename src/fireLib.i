@@ -1,9 +1,10 @@
-/* file : gfg.i */
-  
-/* name of module to use*/
+%include "carrays.i"
+
 %module firelib
+
+
 %{
     #include "fireLib.h"
 %}
-  
+%array_class(double, doubleArray);
 %include "fireLib.h"
